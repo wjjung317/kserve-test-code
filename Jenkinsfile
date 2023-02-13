@@ -8,7 +8,7 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'python -m pytest --junitxml=junit.xml'
+        sh 'python -m pytest --junitxml=results.xml'
       }  
     }
     stage("Collect Test Resuts") {
