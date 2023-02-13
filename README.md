@@ -22,7 +22,7 @@
 3. Curl to test that the API is working using this [example script](https://github.com/wjjung317/kserve-test-code/blob/main/example_payload/iris-input.json)
 4. Expected output:
 
-
+```
 * Trying 127.0.0.1:8080...
 * Connected to localhost (127.0.0.1) port 8080 (#0)
 > POST /v1/models/sklearn-from-uri:predict HTTP/1.1
@@ -42,4 +42,4 @@
 < 
 * Connection #0 to host localhost left intact
 {"predictions":[1,1]}%    
-
+```
