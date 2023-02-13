@@ -16,7 +16,7 @@
 3. Create & specify [.yaml file](https://github.com/wjjung317/kserve-test-code/blob/main/sklearn-from-uri.yaml) which will be used to instruct KServe what model to deploy (e.g. a linked pointer to the file server containing the serialized model object in .joblib format) and how (e.g. which [out-of-the-box Python runtimes that comes with KServe](https://github.com/kserve/kserve/tree/master/config/runtimes) to use) 
 4. Create a namespace ("kserve-test"), and [deploy](https://github.com/wjjung317/kserve-test-code/blob/main/deploy.txt) the model API using the .yaml file from Step 4
 
-## Optional Steps: Post-Deployment test (steps 
+## Optional Steps: Check that the API is working post-deployment  
 1. One way to access the deployed API service is via [port forwarding](https://github.com/wjjung317/kserve-test-code/blob/main/port_forwarding.txt)
 2. Create [sample payload](https://github.com/wjjung317/kserve-test-code/blob/main/example_payload/iris-input.json) containing example input data that would be used by the API to predict the type of flower
 3. Curl to test that the API is working using this [example script](https://github.com/wjjung317/kserve-test-code/blob/main/example_payload/iris-input.json)
