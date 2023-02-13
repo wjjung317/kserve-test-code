@@ -23,7 +23,7 @@
 4. Expected output:
 
 
-*   Trying 127.0.0.1:8080...
+* Trying 127.0.0.1:8080...
 * Connected to localhost (127.0.0.1) port 8080 (#0)
 > POST /v1/models/sklearn-from-uri:predict HTTP/1.1
 > Host: sklearn-from-uri.default.example.com
