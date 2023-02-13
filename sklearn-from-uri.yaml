@@ -1,0 +1,10 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: sklearn-from-uri
+spec:
+  predictor:
+    model:
+      modelFormat:
+        name: sklearn
+      storageUri: https://github.com/wjjung317/kserve-test-code/blob/main/model.joblib?raw=true
