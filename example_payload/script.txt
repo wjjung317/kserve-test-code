@@ -1,0 +1,20 @@
+cat <<EOF > "./iris-input.json"
+{
+  "instances": [
+    [6.8,  2.8,  4.8,  1.4],
+    [6.0,  3.4,  4.5,  1.6]
+  ]
+}
+EOF
+
+
+SERVICE_HOSTNAME=$(kubectl get inferenceservice sklearn-from-uri -o jsonpath='{.status.url}' | cut -d "/" -f 3)
+
+MODEL_NAME=sklearn-from-uri
+
+INPUT_PATH=@./iris-input.json
+
+
+
+
+curl -v -H "Host: ${SERVICE_HOSTNAME}" http://${INGRESS_HOST}:${INGRESS_PORT}/v1/models/$MODEL_NAME:predict -d $INPUT_PATH
