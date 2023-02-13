@@ -8,13 +8,15 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'python -m pytest'
-      }
-      post {
-        always {
-          junit 'build/reports/**/*.xml'
-        }
-      }    
+        sh 'python -m pytest --junitxml=junit.xml'
+      }  
     }
+    stage("Collect Test Resuts") {
+      steps {
+        archiveArtifacts "junit.xml"
+        junit "junit.xml"
+      }
+    }
+
   }
 }
