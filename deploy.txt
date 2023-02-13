@@ -1,0 +1,3 @@
+kubectl create namespace kserve-test
+
+kubectl apply -f sklearn-from-uri.yaml --n=kserve-test
