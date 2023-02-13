@@ -1,3 +1,3 @@
 kubectl create namespace kserve-test
 
-kubectl apply --n kserve-test -f sklearn-from-uri.yaml 
+kubectl apply -n kserve-test -f sklearn-from-uri.yaml  
