@@ -25,7 +25,7 @@
 
 ### User Workflow
 1. Develop model training code in [notebook](https://github.com/wjjung317/kserve-test-code/blob/main/sklearn-test.ipynb)
-2. Write tests using the pytest and GitHub Actions frameworks to check that the model is behaving as expected
+2. Write tests using the pytest and GitHub Actions frameworks to check that the model is behaving as expected.  This involves writing test definitions in pytest and a GitHub Actions workflow [.yaml file](https://github.com/wjjung317/kserve-test-code/blob/main/.github/workflows/python-app.yml)
 3. Pushes test script files and serialized model object as a [.joblib file](https://github.com/wjjung317/kserve-test-code/blob/main/model.joblib) to GitHUB
 4. Check CI via GitHub Actions 
 5. Create & specify [.yaml file](https://github.com/wjjung317/kserve-test-code/blob/main/sklearn-from-uri.yaml) which will be used to instruct KServe what model to deploy (e.g. a linked pointer to the file server containing the serialized model object in .joblib format) and how (e.g. which [out-of-the-box Python runtimes that comes with KServe](https://github.com/kserve/kserve/tree/master/config/runtimes) to use) 
