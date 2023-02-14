@@ -18,7 +18,7 @@
 
 ## Optional Steps: Check that the API is working post-deployment  
 1. One way to access the deployed API service is via [port forwarding](https://github.com/wjjung317/kserve-test-code/blob/main/port_forwarding.txt)
-2. Create [sample payload](https://github.com/wjjung317/kserve-test-code/blob/main/example_payload/iris-input.json) containing example input data that would be used by the API to predict the type of flower
+2. Create [sample payload](https://github.com/wjjung317/kserve-test-code/blob/main/example_payload/iris-input.json) containing example input data that would be used by the API to predict the type of flower (2 data records or flowers in this specific case)
 3. Curl to test that the API is working using this [example script](https://github.com/wjjung317/kserve-test-code/blob/main/example_payload/iris-input.json)
 4. Expected output:
 
