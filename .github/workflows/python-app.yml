@@ -42,5 +42,4 @@ jobs:
       if: always()
       with:
        files: |
-            *.xml
-            *.trx
+            junit/test-results.xml
