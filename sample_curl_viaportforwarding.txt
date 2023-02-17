@@ -1,0 +1,12 @@
+# setup port forwarding (assumign local k8s environment)
+INGRESS_GATEWAY_SERVICE=$(kubectl get svc --namespace istio-system --selector="app=istio-ingressgateway" --output jsonpath='{.items[0].metadata.name}')
+kubectl port-forward --namespace istio-system svc/${INGRESS_GATEWAY_SERVICE} 8080:80
+
+# start another terminal
+export INGRESS_HOST=localhost
+export INGRESS_PORT=8080
+
+# curl sample payload
+SERVICE_HOSTNAME=$(kubectl get inferenceservice sklearn-from-uri -n kserve-test -o jsonpath='{.status.url}' | cut -d "/" -f 3) 
+
+curl -v -H "Host: ${SERVICE_HOSTNAME}" http://${INGRESS_HOST}:${INGRESS_PORT}/v1/models/sklearn-from-uri:predict -d @./iris-input.json
