@@ -1,0 +1,3 @@
+SERVICE_HOSTNAME=$(kubectl get inferenceservice sklearn-from-uri -n kserve-test -o jsonpath='{.status.url}' | cut -d "/" -f 3) 
+
+curl -v -H "Host: ${SERVICE_HOSTNAME}" http://${INGRESS_HOST}:${INGRESS_PORT}/v1/models/sklearn-from-uri:predict -d @./iris-input.json
