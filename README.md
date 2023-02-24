@@ -1,6 +1,6 @@
 # kserve-test-code
 
-## Overview
+## Overview 
 * Example of how a data scientist might deploy a basic app on Kubernetes
   * App in the form of an API
   * Piggybacks off of [KServe](https://kserve.github.io/website/0.10/) for runtime serving
